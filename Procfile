@@ -1,1 +1,1 @@
-worker: python newsBot.py
+worker: python main.py
