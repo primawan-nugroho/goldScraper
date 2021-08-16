@@ -1,10 +1,13 @@
+from instabot import bot
 import goldScraper
 from datetime import date
 import generateImage
 import config
+import schedule
+import time
 
-def main():
-    today = date.today().strftime('%d-%B-%Y')
+def perform():
+    today = date.today().strftime('%d-%B-%Y')    
 
     antamLM = goldScraper.getAntamLM()
     antamIndoGold = goldScraper.getAntamIndoGold()
@@ -16,8 +19,14 @@ def main():
     print("UBS Indo Gold : Rp {}". format(UBS))
 
     generateImage.drawPrice(antamIndoGold, UBS, antamLM)
-    config.clean_up()
-    config.postIG("Post {}.jpg".format(today))
-    
+    config.clean_up()    
+    config.postIG(bot,"Post {}.jpg".format(today))
+
+def main():
+    schedule.every().day.at("10:00").do(perform)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
 if __name__ == "__main__":
     main()

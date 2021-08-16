@@ -4,13 +4,12 @@ import os
 import shutil
 import time
 
-def postIG(file):
-    today = date.today().strftime('%d-%B-%Y')
+def postIG(bot, file):
     bot = Bot()
-    time.sleep(5)
     bot.login(username = os.getenv("WHOAREYOU"),
               password = os.getenv("IAMYOU"))
-    time.sleep(5)
+
+    today = date.today().strftime('%d-%B-%Y')
     bot.upload_photo(file,
                caption = "Harga emas hari ini {}".format(today))
     time.sleep(5)
