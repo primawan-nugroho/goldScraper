@@ -1,10 +1,12 @@
 from instabot import bot
 import goldScraper
-from datetime import date
+from datetime import date, datetime
 import generateImage
 import config
 import schedule
 import time
+
+TIME = "13:00"
 
 def perform():
     today = date.today().strftime('%d-%B-%Y')    
@@ -23,10 +25,13 @@ def perform():
     config.postIG(bot,"Post {}.jpg".format(today))
 
 def main():
-    schedule.every().day.at("10:00").do(perform)
+    schedule.every().day.at(TIME).do(perform)
     while True:
+        today = date.today().strftime('%d-%B-%Y')    
+        #current_time = datetime.now().strftime("%H:%M:%S") 
+        print("scheduled : {} {}".format(today, TIME))
         schedule.run_pending()
-        time.sleep(1)
+        time.sleep(10)
 
 if __name__ == "__main__":
     main()
