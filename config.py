@@ -10,9 +10,10 @@ def postIG(bot, file):
               password = os.getenv("IAMYOU"))
 
     today = date.today().strftime('%d-%B-%Y')
+    time.sleep(1)
     bot.upload_photo(file,
                caption = "Harga emas hari ini {}".format(today))
-    time.sleep(5)
+    time.sleep(1)
     bot.logout()
 
 def clean_up():

@@ -58,6 +58,7 @@ def main():
         time.sleep(10)
     '''
     perform()
+    time.sleep(1)
     exit(0)
 
 if __name__ == "__main__":
