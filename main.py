@@ -30,7 +30,7 @@ import config
 import schedule
 import time
 
-TIME = "20:30"
+TIME = "20:35"
 
 def perform():
     today = date.today().strftime('%d-%B-%Y')    
@@ -46,7 +46,7 @@ def perform():
 
     generateImage.drawPrice(antamIndoGold, UBS, antamLM)
     #config.clean_up()    
-    #config.postIG(bot,"Post {}.jpg".format(today))
+    config.postIG(bot,"Post {}.jpg".format(today))
     print("proses image upload")
 
     print("next schedule : {} {}".format(today,TIME))
