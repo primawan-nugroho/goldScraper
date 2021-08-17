@@ -44,19 +44,21 @@ def perform():
     print("Antam Indo Gold : Rp {}". format(antamIndoGold))
     print("UBS Indo Gold : Rp {}". format(UBS))
 
-    generateImage.drawPrice(antamIndoGold, UBS, antamLM)
     config.clean_up()    
-    config.postIG(bot, "Post {}.jpg".format(today))
-    print("proses image upload")
-
+    generateImage.drawPrice(antamIndoGold, UBS, antamLM)
+    config.postIG(bot, "Post.jpg")
     print("next schedule : {} {}".format(today,TIME))
 
 def main():
+    '''
     schedule.every().day.at(TIME).do(perform)
     while True:
         #current_time = datetime.now().strftime("%H:%M:%S")
         schedule.run_pending()
         time.sleep(10)
+    '''
+    perform()
+    exit(0)
 
 if __name__ == "__main__":
     main()

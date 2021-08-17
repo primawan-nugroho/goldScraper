@@ -36,6 +36,4 @@ def drawPrice(antamIndogoldPrice, UBSIndogoldPrice, antamLMPrice):
     canvas.text((1200, 840),"/gr",(255,255,255),font=font)
     canvas.text((1200, 1310),"/gr",(255,255,255),font=font)
 
-    #img.show()
-    img.save("Post.jpg")
-    #return img
+    img.save("Post.jpg", "JPEG")
