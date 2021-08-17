@@ -1,1 +1,1 @@
-worker: python goldScraper.py
+worker: python main.py
