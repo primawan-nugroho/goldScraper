@@ -44,8 +44,3 @@ def getUBSIndoGold():
     #find price for 1.0 gram
     ans2 = ans.find("td", text="1.0 gram").find_next_sibling("td").text #find
     return ans2.split("Rp ")[1]
-
-print("printed from goldScraper.py")
-print("Antam Logam Mulia : Rp {}".format(getAntamLM()))
-print("Antam Indo Gold : Rp {}". format(getAntamIndoGold()))
-print("UBS Indo Gold : Rp {}". format(getUBSIndoGold()))

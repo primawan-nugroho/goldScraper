@@ -21,7 +21,7 @@ def clean_up():
     # bug di instabot gabisa upload kalo ada 2 file/folder diatas
     today = date.today().strftime('%d-%B-%Y')
     dir = "config"
-    img = "Post {}.jpg.REMOVE_ME".format(today)
+    img = "Post.jpg"
 
     if os.path.exists(dir):
         try:
