@@ -30,7 +30,7 @@ import config
 import schedule
 import time
 
-TIME = "20:52"
+TIME = "21:48"
 
 def perform():
     today = date.today().strftime('%d-%B-%Y')    
