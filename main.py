@@ -21,15 +21,16 @@ Test schedule run in Heroku
 [worker.1]: AttributeError: 'NoneType' object has no attribute 'find_next_sibling'
 2021-08-16T06:00:05.706374+00:00 heroku[worker.1]: Process exited with status 1
 '''
+# git remote set-url origin https://github.com/primawan-nugroho/goldScraper.git
 from instabot import bot
 import goldScraper
-from datetime import date, datetime
+from datetime import date
 import generateImage
 import config
 import schedule
 import time
 
-TIME = "13:00"
+TIME = "20:15"
 
 def perform():
     today = date.today().strftime('%d-%B-%Y')    
