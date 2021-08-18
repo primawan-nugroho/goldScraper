@@ -6,8 +6,9 @@ import time
 
 def postIG(bot, file):
     bot = Bot()
+    time.sleep(5)
     bot.login(username = os.getenv("WHOAREYOU"),
-              password = os.getenv("IAMYOU"))
+              password = os.getenv("IAMYOU"), is_threaded = False)
 
     today = date.today().strftime('%d-%B-%Y')
     time.sleep(1)
